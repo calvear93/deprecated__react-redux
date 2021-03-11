@@ -125,8 +125,7 @@ export default function SampleReducer(store = {}, action)
 
 Finally (optional) your middleware saga in sample.saga.js:
 ```javascript
-import { all, call, takeLatest } from 'redux-saga/effects';
-import { putAction } from '@calvear/react-redux/effects';
+import { all, call, takeLatest, putAction } from '@calvear/react-redux/effects';
 import SamplePartition from './sample.partition';
 import Service from 'adapters/service';
 
@@ -184,6 +183,10 @@ export default createStore({ reducers, sagas, debug });
 ```
 
 ### Hooks
+
+TODO
+
+### Saga Effects
 
 TODO
 
