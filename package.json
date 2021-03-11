@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "@calvear/react-redux",
   "title": "React Redux with Saga middleware.",
   "description": "Preconfigured Redux store initializer with Redux Saga, Redux Logger and Reselect for React SPA applications.",
@@ -7,10 +7,7 @@
   "license": "MIT",
   "private": false,
   "repository": "https://github.com/calvear93/react-redux",
-  "main": "dist/index.js",
-  "files": [
-    "dist"
-  ],
+  "main": "index.js",
   "keywords": [
     "react",
     "react-redux",
@@ -42,6 +39,7 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
+    "copyfiles": "^2.4.1",
     "eslint": "^7.21.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^24.2.1",
@@ -53,7 +51,7 @@
   },
   "scripts": {
     "build": "npx babel src --out-dir dist --copy-files --source-maps",
-    "upload": "npm run build && npm login && npm publish --access public",
+    "upload": "npm run build && npm login && cd dist && npm publish --access public",
     "upload:beta": "npm run build && npm login && npm publish --access public --tag beta",
     "upload:alpha": "npm run build && npm login && npm publish --access public --tag alpha",
     "eslint:analyze": "eslint --ext .js,.jsx src/",
@@ -62,6 +60,7 @@
     "_packages:update": "npm update --save/--save-dev",
     "_packages:force-update": "npx npm-check-updates -u",
     "_git:case-sensitive": "git config core.ignorecase false",
-    "prebuild": "rimraf dist/**"
+    "prebuild": "rimraf dist/**",
+    "postbuild": "copyfiles package.json README.md LICENSE.md CHANGELOG.md dist"
   }
 }
