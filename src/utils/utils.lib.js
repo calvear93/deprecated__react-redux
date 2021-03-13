@@ -11,13 +11,13 @@ export function createPartitionSelector(partition)
 }
 
 /**
- * Makes object properties of an object unique.
+ * Makes action types of partition handler unique.
  *
- * @param {string} prefix unique key prefix.
- * @param {object} obj dictionary with actions types for declare.
+ * @param {any} partition partition action types.
+ *
  */
-export function makeTypesUnique(prefix, obj)
+export function packagePartitionHandler(partition)
 {
-    for (const key of Object.keys(obj))
-        obj[key] = `${prefix}:${key}`;
+    for (const key of Object.keys(partition.Type))
+        partition.Type[key] = `${partition.Key}:${key}`;
 }

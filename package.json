@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "name": "@calvear/react-redux",
   "title": "React Redux with Saga middleware.",
   "description": "Preconfigured Redux store initializer with Redux Saga, Redux Logger and Reselect for React SPA applications.",

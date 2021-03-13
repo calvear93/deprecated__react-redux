@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2021-03-13
+-   docs updated.
+-   packagePartitionHandler util added.
+-   dispatch saga effect added.
+
 ## [1.0.1] - 2021-03-11
 -   fixed publishing root files structure,
 

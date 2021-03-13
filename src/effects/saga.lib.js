@@ -5,26 +5,45 @@
  * @author Alvear Candia, Cristopher Alejandro <calvear93@gmail.com>
  *
  * Created at     : 2020-05-16 22:43:58
- * Last modified  : 2021-03-10 18:48:48
+ * Last modified  : 2021-03-13 15:08:54
  */
 
-import { race, take, delay, put } from 'redux-saga/effects';
+import { delay, put, race, take, select } from 'redux-saga/effects';
+import { createPartitionSelector } from '../utils';
 
 /**
  * Dispatches an action.
+ *
+ * @dependency put from redux-saga.
  *
  * @param {string} type action type.
  * @param {any} payload action payload.
  *
  * @yields {Array<any>}
  */
-export function* putAction(type, payload)
+export function* dispatch(type, payload)
 {
     yield put({ type, payload });
 }
 
 /**
+ * Query a store partition by a partition definition.
+ *
+ * @dependency select from redux-saga.
+ *
+ * @param {any} partition partition definition with action types.
+ *
+ * @returns {any} partition.
+ */
+export function selectPartition(partition)
+{
+    return select(createPartitionSelector(partition));
+}
+
+/**
  * Waits for any action type to occur n times.
+ *
+ * @dependency race, take and delay from redux-saga.
  *
  * @param {Array} types action types (from partitions definitions).
  * @param {number} times times for wait each action type.
@@ -34,7 +53,7 @@ export function* putAction(type, payload)
  *
  * @returns {IterableIterator<any>} actions results.
  */
-export function* takeAny(types, times, timeout = 0)
+export function* takeAny(types, times = 1, timeout = 0)
 {
     // stores every result of action intercepted.
     let results = [];
