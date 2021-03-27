@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.1] - 2021-03-27
+-   packages updated.
+
 ## [1.1.0] - 2021-03-13
 -   docs updated.
 -   packagePartitionHandler util added.
