@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 /**
- * Allows to query a store partition by an action vault.
+ * Returns an action dispatcher.
  *
  * @dependency useEffect and useState from react,
  *  useDispatch from react-redux.

@@ -176,7 +176,7 @@ Library has custom hooks for eases partition handling.
 
 ```javascript
 import { usePartition } from '@calvear/react-redux/hooks';
-import { SamplePartition } from './sample';
+import { SamplePartition } from 'store/sample';
 
 export default function MainPage()
 {
@@ -186,12 +186,12 @@ export default function MainPage()
 }
 ```
 
--   **usePartition**: retrieves current partition state.
+-   **useActionDispatch**: returns an action dispatcher.
 
 ```javascript
 import { useEffect } from 'react';
 import { useActionDispatch } from '@calvear/react-redux/hooks';
-import { SamplePartition } from './sample';
+import { SamplePartition } from 'store/sample';
 
 export default function MainPage()
 {
@@ -223,7 +223,7 @@ export default function MainPage()
 }
 ```
 
--   **useSelector**: extracts data from the Redux store state.
+-   **useDispatch**: returns a store dispatcher.
 
 ```javascript
 import { useEffect } from 'react';
