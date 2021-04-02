@@ -212,7 +212,7 @@ Also, exports every hook from [react-redux](https://react-redux.js.org/) lib.
 
 ```javascript
 import { useSelector } from '@calvear/react-redux/hooks';
-import { SamplePartition } from './sample';
+import { SamplePartition } from 'store/sample';
 
 export default function MainPage()
 {
@@ -228,7 +228,7 @@ export default function MainPage()
 ```javascript
 import { useEffect } from 'react';
 import { useDispatch } from '@calvear/react-redux/hooks';
-import { SamplePartition } from './sample';
+import { SamplePartition } from 'store/sample';
 
 export default function MainPage()
 {
@@ -271,7 +271,7 @@ Library integrates and exports [reselect](https://github.com/reduxjs/reselect) l
 import { createPartitionSelector } from '@calvear/react-redux';
 import { useSelector } from '@calvear/react-redux/hooks';
 import { createSelector } from '@calvear/react-redux/reselect';
-import { SamplePartition } from './sample';
+import { SamplePartition } from 'store/sample';
 
 const sampleSelector = createPartitionSelector(SamplePartition);
 
@@ -296,7 +296,7 @@ Library has custom [redux-saga](https://redux-saga.js.org/) effects.
 
 ```javascript
 import { dispatch } from '@calvear/react-redux/effects';
-import { SamplePartition } from './sample';
+import { SamplePartition } from 'store/sample';
 
 function* exec({ payload })
 {
@@ -314,7 +314,7 @@ function* exec({ payload })
 
 ```javascript
 import { selectPartition } from '@calvear/react-redux/effects';
-import { SamplePartition } from './sample';
+import { SamplePartition } from 'store/sample';
 
 function* exec()
 {
@@ -329,7 +329,7 @@ function* exec()
 
 ```javascript
 import { takeAny } from '@calvear/react-redux/effects';
-import { SamplePartition } from './sample';
+import { SamplePartition } from 'store/sample';
 
 function* exec()
 {
