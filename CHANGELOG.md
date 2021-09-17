@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.1.4] - 2021-09-16
+## [1.1.4-1] - 2021-09-16
 
 -   React minimum version changed to 17.
 -   dependencies updated.
